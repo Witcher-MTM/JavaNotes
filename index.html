@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="MainNav">
+        <nav class="menu">
+            <ol>
+                <li class="menu-item"><a href="#0">Home</a></li>
+                <li class="menu-item">
+                    <a href="#0">Add note</a>
+                    <ol class="sub-menu">
+                        <li class="menu-item"><input type="text" class="form__input" id="title" placeholder="Title"
+                                required="" /></li>
+                        <li class="menu-item"><input type="text" class="form__input" id="text" placeholder="Text"
+                                required="" /></li>
+                        <li class="menu-item"><input type="text" class="form__input" id="image" placeholder="Image"
+                                required="" /></li>
+                        <li class="menu-item"><button onclick="AddNote()" type="submit">Add</button></li>
+                    </ol>
+                </li>
+                <li class="menu-item">
+                    <a href="#0">Search</a>
+                    <ol class="sub-menu">
+                        <li class="menu-item"><input onkeydown="Filter_on_Text()" type="text" class="form__input"
+                                id="filter_text" placeholder="Text" required="" /></li>
+                        <li class="menu-item"><input onkeydown="Filter_on_Title()" type="text" class="form__input"
+                                id="filter_title" placeholder="Title" required="" /></li>
+                    </ol>
+                </li>
+        </nav>
+    </div>
+    <div id="main">
+        
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
