@@ -1,6 +1,8 @@
 var mainDiv = document.getElementById('main');
-var cards_text = document.getElementsByClassName('postcard__preview-txt');
+
+
 async function Filter_on_Text() {
+    var cards_text = document.getElementsByClassName('postcard__preview-txt');
     var text = await document.getElementById('filter_text');
     for (let i = 0; i < cards_text.length; i++) {
         if (cards_text[i].innerHTML.includes(text.value)) {
@@ -13,8 +15,19 @@ async function Filter_on_Text() {
         }
     }
 }
-function Filter_on_Title(e) {
+function Filter_on_Title() {
+    var cards_title = document.getElementsByClassName('card_title');
     var title = document.getElementById('filter_title');
+    for (let i = 0; i < cards_title.length; i++) {
+        if (cards_title[i].innerHTML.includes(title.value)) {
+            if (title.value != '') {
+                cards_title[i].style.color = 'orange';
+            }
+        }
+        else {
+            cards_title[i].style.color = 'white';
+        }
+    }
 }
 function AddNote() {
     var text_input = document.getElementById('text');
@@ -38,6 +51,7 @@ function AddNote() {
     var card_text_a = document.createElement('a');
     card_title_h1.className = 'postcard__title blue';
     card_text_a.href = '#';
+    card_text_a.className = 'card_title';
     card_text_a.innerHTML = title_input.value;
     card_title_h1.appendChild(card_text_a);
 
